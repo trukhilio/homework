@@ -1,0 +1,27 @@
+@font-face {
+            font-family: Roboto;
+            src: url(fonts/Roboto-Regular.ttf);
+            }
+
+@font-face {
+            font-family: Heinrich;
+            src: url(fonts/Heinrich.ttf);
+}
+
+@font-face {
+            font-family: Chalk;
+            src: url(fonts/Chalk.ttf);
+
+}
+      .one {
+            font-family: Roboto;
+
+      }
+      .two {
+            font-family: Heinrich;
+            font-size: 20px;
+
+      }
+      .three {
+              font-family: Chalk;
+      }
