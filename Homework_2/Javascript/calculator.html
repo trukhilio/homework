@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script type="text/javascript">
+        alert("Welcome to the most primitive calculator in the world!");
+        var a = +prompt("Enter the first number");
+        var b = +prompt("Enter the second number");
+        var operator = prompt("What you want to do with chosen numbers: +, -, *, /, %, ^ ");
+        var c;
+
+        switch (operator){
+            case "+":           {
+                c=a+b;
+                document.write(a,"+",b,'=',c);
+            }
+            break;
+            case "-":           {
+                c=a-b;
+                document.write(a,"-",b,'=',c);
+            }
+                break;
+            case "*":           {
+                c=a*b;
+                document.write(a,"*",b,'=',c);
+            }
+                break;
+            case "/":           {
+                c=a/b;
+                document.write(a,"/",b,'=',c);
+            }
+                break;
+            case "%":           {
+                c=a%b;
+                document.write(a,"%",b,'=',c);
+            }
+                break;
+            case "^":           {
+                c=Math.pow(a,b);
+                document.write(a,"^",b,'=',c);
+            }
+                break;
+            default: {
+                alert("Неверно выбран оператор");
+            }
+            break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
