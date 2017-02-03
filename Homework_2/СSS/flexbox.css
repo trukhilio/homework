@@ -1,0 +1,93 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #DCDCDC;
+}
+.inside{
+    display: flex;
+    flex-direction: column;
+    background-color: #0000FF;
+    padding: 20px;
+}
+
+.header {
+    background-color: #A9A9A9;
+    margin-bottom: 10px;
+    height: 80px;
+}
+
+.con {
+    height: 70px;
+}
+.one {
+    background-color: #FA8072;
+}
+.two {
+    background-color: #9932CC;
+}
+.three {
+    background-color: #8B0000;
+}
+.four {
+    background-color: #48D1CC;
+}
+.five {
+    background-color: #4169E1;
+}
+.footer{
+    background-color: #A9A9A9;
+    margin-top: 10px;
+    height: 60px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+        .inside {
+            flex-flow: row wrap;
+                }
+    .footer {
+        height: 70px;
+    }
+    .one {
+        flex-basis: 50%;
+    }
+    .two {
+        order: 2;
+        flex-basis: 50%;
+    }
+    .three {
+        flex-basis: 50%;
+        order: 3;
+    }
+    .four {
+        flex-basis: 100%;
+        order: 5;
+    }
+    .five {
+        flex-basis: 50%;
+        order: 4;
+    }
+}
+@media screen and (min-width: 769px){
+    .inside {
+        flex-flow: row wrap;
+    }
+    .footer {
+        height: 70px;
+    }
+    .one {
+        flex-basis: calc(100%/3);
+    }
+    .two {
+        flex-basis: calc(100%/3) ;
+    }
+    .three {
+        flex-basis: calc(100%/3);
+    }
+    .four {
+        flex-basis: 50%;
+    }
+    .five {
+        flex-basis: 50%;
+    }
+}
