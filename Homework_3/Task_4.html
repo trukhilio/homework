@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task_4</title>
+    <script type="text/javascript">
+            var m=8;
+            var arr = new Array (m);
+            for (var i=0; i < arr.length; i++ ) {
+                arr[i]= new Array (m);
+            }
+            for (var r=0; r < arr.length; r++){
+                for (var c=0; c < arr.length; c++){
+                    if ((r+c)%2==0)
+                        document.write ("<img src='white.jpg' width='50px' height='50px'>");
+                    else
+                        document.write ("<img src='black.jpg' width='50px' height='50px'>");
+                }
+                document.write ('<br/>')
+            }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

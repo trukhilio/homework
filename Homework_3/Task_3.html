@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task_3</title>
+    <script type="text/javascript">
+        var add = function(a,b){
+            return a+b;
+        };
+        var sub = function (a,b){
+            return a-b;
+        };
+        var mult = function (a,b){
+            return a*b;
+        };
+        var div = function (a,b){
+            return a/b;
+        };
+        var mod = function (a,b){
+            return a%b;
+        };
+        var pow = function (a,b){
+            return Math.pow(a,b);
+        };
+
+        function show (callBackFunction,a,b){
+            var result = callBackFunction (a,b);
+            document.write(result);
+        }
+
+        var a = +prompt("Enter the first number");
+        var b = +prompt("Enter the second number");
+        var oper = prompt("What do you want to do with chosen numbers: +, -, *, /, %, ^ ");
+
+        switch (oper){
+            case "+":           {
+                oper = add;
+            }
+                break;
+            case "-":           {
+                oper = sub;
+            }
+                break;
+            case "*":           {
+                oper = mult;
+            }
+                break;
+            case "/":           {
+                oper = div;
+            }
+                break;
+            case "%":           {
+                oper = mod;
+            }
+                break;
+            case "^":           {
+                oper = pow;
+            }
+                break;
+            default: {
+                alert("Неверно выбран оператор");
+            }
+                break;
+        }
+        show (oper,a,b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
