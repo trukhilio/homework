@@ -25,7 +25,7 @@
 
         function show (callBackFunction,a,b){
             var result = callBackFunction (a,b);
-            document.write(result);
+            document.write(a+oper+b,"=",result);
         }
 
         var a = +prompt("Enter the first number");
@@ -34,27 +34,27 @@
 
         switch (oper){
             case "+":           {
-                oper = add;
+                oper = show(add,a,b);
             }
                 break;
             case "-":           {
-                oper = sub;
+                oper = show(sub,a,b);
             }
                 break;
             case "*":           {
-                oper = mult;
+                oper = show(mult,a,b);
             }
                 break;
             case "/":           {
-                oper = div;
+                oper = show(div,a,b);
             }
                 break;
             case "%":           {
-                oper = mod;
+                oper = show(mod,a,b);
             }
                 break;
             case "^":           {
-                oper = pow;
+                oper = show(pow,a,b);
             }
                 break;
             default: {
@@ -62,7 +62,6 @@
             }
                 break;
         }
-        show (oper,a,b);
     </script>
 </head>
 <body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <script type="text/javascript">
+            window.onload = function(){
+                var timer = null;
+                var interval;
+                var t;
+
+                function time ()
+                    {
+                    getId("show").innerHTML = timer;
+                    timer++;
+                };
+
+                getId("startPause").onclick = function () {
+                    if (timer==null || t==interval)
+                        {
+                        interval = setInterval(time, 10);
+                    }
+                    else {
+                            clearInterval(interval);
+                            t = interval;
+                    };
+                };
+
+                getId("clear").onclick = function(){
+                    timer = null;
+                    getId("show").innerHTML = "0";
+                };
+            };
+
+            var getId = function(id){
+                return document.getElementById(id);
+            };
+    </script>
+</head>
+<body>
+    <p id="show">
+                0
+    </p>
+    <input id="startPause" type="button" value="Start/Pause">
+    <input id="clear" type="button" value="Clear">
+</body>
+</html>
