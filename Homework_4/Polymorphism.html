@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polymorphism</title>
+    <script type="text/javascript">
+
+            function Figure(name, textFormula, formula){
+                this.name = name;
+                this.formula = function (){};
+                this.textFormula = textFormula;
+                this.getArea = function () {
+                    document.write("Area of the " + this.name + " S = " + this.textFormula + this.formula() + "<br/>")
+                };
+            };
+
+            function Rectangle (name, a, b){
+                this.name = name;
+                this.a = a;
+                this.b = b;
+                this.textFormula = "a * b = " + this.a + " * " + this.b + " = ";
+                this.formula = function(){
+                    return this.a*this.b;
+                };
+
+            };
+
+            function Square (name, a){
+                this.name = name;
+                this.a = a;
+                this.textFormula = "a * a = " + this.a + " * " + this.a + " = ";
+                this.formula = function(){
+                    return Math.pow(this.a,2);
+                };
+            };
+
+            function Triangle (name, a, b, c){
+                this.name = name;
+                this.a = a;
+                this.b = b;
+                this.c = c;
+                this.p = function(){
+                    return (this.a+this.b+this.c)/2;
+                };
+                this.textFormula = "sqrt (p * (p-a) * (p-b) * (p-c)) = "
+                    + "sqrt " + "(" + this.p()+ " * " + "(" + this.p() + " - " + this.a + ") " +
+                    " * " + "(" + this.p() + " - " + this.b + ") "+ " * " + "(" + this.p() + " - " + this.c + ")) = ";
+                this.formula = function(){
+                    return ((Math.sqrt(this.p()*(this.p()-this.a)*(this.p()-this.b)*(this.p()-this.c))).toFixed(2));
+                };
+
+            };
+
+            function Circle (name, r){
+                this.name = name;
+                this.r = r;
+                this.textFormula = (Math.PI.toFixed(2)) + " * " + " r " + "<sup>2</sup>" + " = " + (Math.PI.toFixed(2))
+                    + " * " + r + "<sup>2</sup>" + " = ";
+                this.formula = function(){
+                    return ((Math.PI*Math.pow(r,2)).toFixed(2));
+                };
+            };
+
+            var figure = new Figure ("Figure", "TextFormula", "Formula");
+
+            Rectangle.prototype = figure;
+            Square.prototype = figure;
+            Triangle.prototype = figure;
+            Circle.prototype = figure;
+
+            var rect = new Rectangle ("Rectangle", 10, 20);
+            var sqr = new Square ("Square", 15);
+            var tri = new Triangle ("Triangle", 5, 6, 10);
+            var circ = new Circle ("Circle", 40);
+
+           rect.getArea();
+           sqr.getArea();
+           tri.getArea();
+           circ.getArea();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
