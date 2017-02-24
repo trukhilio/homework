@@ -3,76 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Task_5</title>
-    <script type="text/javascript">
-        var arr = [];
-
-        var Person = function(name, sname, age, lang){
-            this.name = name;
-            this.sname = sname;
-            this.age = age;
-            this.lang = lang;
-        };
-
-        var add = function(){
-            arr.push(person);
-        };
-
-        person = new Person ('Anton', 'Blinov', 27, ['php', 'java', 'ruby', 'go']);
-        add();
-
-        person = new Person ('Svitlana', 'Lomets', 30, ['php', 'java', 'python']);
-        add();
-
-        person = new Person ('Denis', 'Tomovsky', 25, ['java', 'python', 'delphi', 'swift', 'dart']);
-        add();
-
-//        window.onload = function(){
-//                    var form = document.getElementsByName("addNewPerson").onclick;
-//                    form = document.createElement("form");
-//                    form.innerHTML =
-//
-//        };
-
-
-        console.log (arr);
-
-
-    </script>
+    <link rel="stylesheet" href="Task_5_CSS.css">
 </head>
 <body>
-        <form id="buttons">
-            <button name="addNewPerson">
-                    <p>
-                        Add new person
-                    </p>
-            </button>
-            <button name="showAllPersons">
-                    <p>
-                        Show all persons
-                    </p>
-            </button>
-        </form>
-        <form id="addPerson">
-                <p>
-                    First Name
-                </p>
-                <input type="text" name="firstName">
-                <p>
-                    Surname
-                </p>
-                <input type="text" name="surname">
-                <p>
-                    Age
-                </p>
-                <input type="text" name="age">
-                <p>
-                    Programming Languages
-                </p>
-                <input type="text" name="progLang">
-                <p>
-                    <input type="submit" value="Add Person">
-                    <input type="reset" value="Clear">
-                </p>
-        </form>
+    <form id="buttons">
+        <input type="button" id="buttonAddNewPerson"  value="Add New Person"/>
+        <input type="button" id="showAllPersons"  value="Show all persons"/>
+    </form>
+    <form id="formAddPerson">
+        <p>
+            First Name
+        </p>
+        <input type="text" id="firstName">
+        <p>
+            Surname
+        </p>
+        <input type="text" id="surname">
+        <p>
+            Age
+        </p>
+        <input type="text" id="agePerson">
+        <p>
+            Programming Languages
+        </p>
+        <input type="text" id="progLang">
+        <p>
+            <input type="button" id="submitAddNewPerson" value="Add Person">
+        </p>
+    </form>
+    <div id="showTable">
+    </div>
+    <form id="changeTableButtons">
+        <input type="button" id="sortByName" value="Sort By Name"/>
+        <input type="button" id="sortByAge" value="Sort by Age"/>
+        <input type="button" id="sortByLang" value="Sort by Languages amount"/>
+        <p>
+            Number in the list
+
+            <input type="text" id="numberInTheList"/>
+
+            Name of the Person
+
+            <input type="text" id="nameOfThePerson"/>
+            <input type="button" id="deletePerson" value="Delete Person"/>
+        </p>
+
+    </form>
+    <script type="text/javascript" src="Task_5_JS.js"></script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+.error{
+    padding: 1px;
+    border: 2px solid red;
+}
+.message{
+    display: none;
+}
+.errorMessage{
+    display: block;
+    color: red;
+}
