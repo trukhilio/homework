@@ -1,0 +1,11 @@
+div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.normal {
+    background-color: red;
+}
+.changed {
+    background-color: yellow;
+}
