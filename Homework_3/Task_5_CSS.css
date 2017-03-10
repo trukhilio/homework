@@ -1,3 +1,17 @@
 #formAddPerson,#changeTableButtons{
     display: none;
 }
+.showElement{
+    display: block;
+}
+.hideElement{
+    display: none;
+}
+table {
+    border: 4px black;
+    border-collapse: collapse;
+}
+tr td{
+    padding: 5px;
+    border: 1px solid black;
+}

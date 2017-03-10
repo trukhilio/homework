@@ -10,6 +10,7 @@
         <input type="button" id="buttonAddNewPerson"  value="Add New Person"/>
         <input type="button" id="showAllPersons"  value="Show all persons"/>
     </form>
+    <br/>
     <form id="formAddPerson">
         <p>
             First Name
@@ -31,23 +32,25 @@
             <input type="button" id="submitAddNewPerson" value="Add Person">
         </p>
     </form>
-    <div id="showTable">
-    </div>
     <form id="changeTableButtons">
         <input type="button" id="sortByName" value="Sort By Name"/>
+        <input type="button" id="sortBySname" value="Sort By Surname"/>
         <input type="button" id="sortByAge" value="Sort by Age"/>
         <input type="button" id="sortByLang" value="Sort by Languages amount"/>
         <p>
             Number in the list
 
             <input type="text" id="numberInTheList"/>
-
-            Name of the Person
-
-            <input type="text" id="nameOfThePerson"/>
-            <input type="button" id="deletePerson" value="Delete Person"/>
+            <input type="button" id="deletePersonByNumber" value="Delete Person"/>
+            <br/>
         </p>
-
+        <p>
+            Name of the Person
+            <input type="text" id="nameOfThePerson"/>
+            <input type="button" id="deletePersonByName" value="Delete Person"/>
+        </p>
+        <div id="showTable">
+        </div>
     </form>
     <script type="text/javascript" src="Task_5_JS.js"></script>
 </body>
