@@ -15,12 +15,16 @@ window.onload = function(){
         return document.getElementById(id);
     };
 
-    var showForm = function(){
-        getId("formAddPerson").style.display="block";
-        getId("formAddPerson").reset();
+    var showForm = function(id){
+        getId(id).classList.remove("hideElement");
+        getId(id).classList.add("showElement");
+    };
+    var hideForm = function(id){
+        getId(id).classList.add("hideElement");
+        getId(id).classList.remove("showElement");
     };
 
-    getId("buttonAddNewPerson").addEventListener("click", showForm, false);
+    getId("buttonAddNewPerson").addEventListener("click", function(){showForm("formAddPerson")}, false);
 
     var Person = function(namePerson, sname, age, lang){
         this.namePerson = namePerson;
@@ -38,21 +42,33 @@ window.onload = function(){
     // saveData();
     //do not unlock - will reset arr only with 3 first persons
     var arrCopy = arr.slice();
-    //function(){
-    // return arr.slice();
-    // };
-
-    var temp = function(){
-        add(new Person (getId("firstName").value, getId("surname").value, getId("agePerson").value, [getId("progLang").value]));
-        getId("formAddPerson").style.display="none";
-        saveData();
+    var arrCopyFunc = function(){
         arrCopy = arr.slice();
     };
 
-    getId("submitAddNewPerson").addEventListener("click", temp, false);
+    var temp = function(){
+        add(new Person (getId("firstName").value, getId("surname").value, getId("agePerson").value, [getId("progLang").value]));
+        saveData();
+        arrCopyFunc();
+        getId("formAddPerson").reset();
+    };
+
+    getId("submitAddNewPerson").addEventListener("click", function(){
+        var confirmPerson = confirm ("You want to add person\n" +
+            "\nName: " + getId("firstName").value +
+            "\nSurname: " + getId("surname").value +
+            "\nAge: " + getId("agePerson").value +
+            "\nProgramming languages: " + [getId("progLang").value]);
+        if (confirmPerson===true) temp();
+    }, false);
+
+    getId("closeFormAddNewPerson").addEventListener("click", function(){
+        hideForm("formAddPerson");
+        getId("formAddPerson").reset();
+    }, false);
 
     getArr();
-    arrCopy = arr.slice();
+    arrCopyFunc();
     var generateArrTable = function(anyArray){
         var table = "<table>";
         for (var i=0; i<anyArray.length; i++){
@@ -70,7 +86,7 @@ window.onload = function(){
 
     var showArr = function(anyArray){
         generateArrTable(anyArray);
-        getId("changeTableButtons").style.display="block";
+        showForm("changeTableButtons");
     };
 
     getId("showAllPersons").addEventListener("click", function(){showArr(arr)}, false);
@@ -93,39 +109,19 @@ window.onload = function(){
                 }
             });
     };
-    // var sortByProp = function(prop){
-    //     var sort = arrCopy.sort(sorting(prop));
-    //     generateArrTable(arrCopy);
-    // };
 
-
-    var sortArrByName = function() {
-        var sort = arrCopy.sort(sorting('namePerson'));
+    var sortArr = function(prop, moreProp) {
+        arrCopy.sort(sorting(prop, moreProp));
         generateArrTable(arrCopy);
-        // return arrCopy;
     };
-    getId("sortByName").addEventListener("click", sortArrByName, false);
 
-    var sortArrByAge = function(){
-        var sort = arrCopy.sort(sorting('age'));
-        generateArrTable(arrCopy);
-        // return arrCopy;
-    };
-    getId("sortByAge").addEventListener("click", sortArrByAge, false);
+    getId("sortByName").addEventListener("click", function(){sortArr("namePerson")}, false);
 
-    var sortArrByLang = function(){
-        var sort = arrCopy.sort(sorting('lang', 'length'));
-        generateArrTable(arrCopy);
-        // return arrCopy;
-    };
-    getId("sortByLang").addEventListener("click", sortArrByLang, false);
+    getId("sortByAge").addEventListener("click", function(){sortArr("age")}, false);
 
-    var sortArrBySurname = function(){
-        var sort = arrCopy.sort(sorting('sname'));
-        generateArrTable(arrCopy);
-        // return arrCopy;
-    };
-    getId("sortBySname").addEventListener("click", sortArrBySurname, false);
+    getId("sortByLang").addEventListener("click", function(){sortArr("lang", "length")}, false);
+
+    getId("sortBySname").addEventListener("click", function(){sortArr("sname")}, false);
 
     var delPersByNum = function(){
         var num = getId("numberInTheList").value;
@@ -139,7 +135,6 @@ window.onload = function(){
             return i;
         };
         var numArr = numSpliceArr();
-        console.log (numArr);
         arr.splice(numArr, 1);
         saveData();
         return showArr(arrCopy);
