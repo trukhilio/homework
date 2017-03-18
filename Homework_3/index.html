@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Task_5</title>
+    <link rel="stylesheet" href="Task_5_CSS.css">
+</head>
+<body>
+    <form id="buttons">
+        <input type="button" id="buttonAddNewPerson"  value="Add New Person"/>
+        <input type="button" id="showAllPersons"  value="Show all persons"/>
+    </form>
+    <br/>
+    <form id="formAddPerson" class="hideElement">
+        <p>
+            First Name
+        </p>
+        <input type="text" id="firstName">
+        <p>
+            Surname
+        </p>
+        <input type="text" id="surname">
+        <p>
+            Age
+        </p>
+        <input type="text" id="agePerson">
+        <p>
+            Programming Languages
+        </p>
+        <input type="text" id="progLang">
+        <p>
+            <input type="button" id="submitAddNewPerson" value="Add Person">
+            <input type="button" id="closeFormAddNewPerson" value="Close">
+        </p>
+    </form>
+    <form id="changeTableButtons" class="hideElement">
+        <input type="button" id="sortByName" value="Sort By Name"/>
+        <input type="button" id="sortBySname" value="Sort By Surname"/>
+        <input type="button" id="sortByAge" value="Sort by Age"/>
+        <input type="button" id="sortByLang" value="Sort by Languages amount"/>
+        <p>
+            Number in the list
+
+            <input type="text" id="numberInTheList"/>
+            <input type="button" id="deletePersonByNumber" value="Delete Person"/>
+            <br/>
+        </p>
+        <p>
+            Name of the Person
+            <input type="text" id="nameOfThePerson"/>
+            <input type="button" id="deletePersonByName" value="Delete Person"/>
+        </p>
+        <div id="showTable">
+        </div>
+    </form>
+    <script type="text/javascript" src="Task_5_JS.js"></script>
+</body>
+</html>
