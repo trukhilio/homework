@@ -6,53 +6,60 @@
     <link rel="stylesheet" href="Task_5_CSS.css">
 </head>
 <body>
-    <form id="buttons">
-        <input type="button" id="buttonAddNewPerson"  value="Add New Person"/>
-        <input type="button" id="showAllPersons"  value="Show all persons"/>
-    </form>
-    <br/>
-    <form id="formAddPerson" class="hideElement">
-        <p>
-            First Name
-        </p>
-        <input type="text" id="firstName">
-        <p>
-            Surname
-        </p>
-        <input type="text" id="surname">
-        <p>
-            Age
-        </p>
-        <input type="text" id="agePerson">
-        <p>
-            Programming Languages
-        </p>
-        <input type="text" id="progLang">
-        <p>
-            <input type="button" id="submitAddNewPerson" value="Add Person">
-            <input type="button" id="closeFormAddNewPerson" value="Close">
-        </p>
-    </form>
-    <form id="changeTableButtons" class="hideElement">
-        <input type="button" id="sortByName" value="Sort By Name"/>
-        <input type="button" id="sortBySname" value="Sort By Surname"/>
-        <input type="button" id="sortByAge" value="Sort by Age"/>
-        <input type="button" id="sortByLang" value="Sort by Languages amount"/>
-        <p>
-            Number in the list
+    <div id="wrapper">
+        <div id="wrapperMore">
+            <div id="textFormat">
+                <p class="margZero">Programmers</p>
+            </div>
+            <div id="buttonsInside">
+                <form id="buttons">
+                    <input type="button" id="buttonAddNewPerson" class="buttonStyle" value="Add new Person"/>
+                    <input type="button" id="showAllPersons" class="buttonStyle" value="Show all persons"/>
+                </form>
+            </div>
+            <div id="formAddPersonStyle">
+                <form id="formAddPerson" class="hideElement">
+                    <input type="text" id="firstName" placeholder="First name" class="box checkIn"/>
+                    <span id="errorMessageName" class="message box">
+                        Type your First name using A-z symbols
+                    </span>
 
-            <input type="text" id="numberInTheList"/>
-            <input type="button" id="deletePersonByNumber" value="Delete Person"/>
-            <br/>
-        </p>
-        <p>
-            Name of the Person
-            <input type="text" id="nameOfThePerson"/>
-            <input type="button" id="deletePersonByName" value="Delete Person"/>
-        </p>
-        <div id="showTable">
+                    <input type="text" id="surname" placeholder="Surname" class="box checkIn"/>
+                    <span id="errorMessageSname" class="message box">
+                        Type your Surname using A-z symbols
+                    </span>
+
+                    <input type="text" id="agePerson" placeholder="Age" class="box checkIn"/>
+                    <span id="errorMessageAge" class="message box">
+                        Type your age from 10 to 99
+                    </span>
+
+                    <input type="text" id="progLang" placeholder="Programming Languages" class="box checkIn"/>
+                    <span id="errorMessageProgLang" class="message box">
+                        Type programming languages using space
+                    </span>
+                    <div id="buttonsAddClose">
+                        <input type="button" id="submitAddNewPerson" value="Add Person" class="buttonStyleMini"/>
+                        <input type="button" id="closeFormAddNewPerson" value="Close" class="buttonStyleMini"/>
+                    </div>
+                </form>
+            </div>
+            <div id="changeTableStyle">
+                <form id="changeTableButtons" class="hideElement">
+                    <input type="button" id="sortByName" value="Sort by Name" class="buttonStyleMini"/>
+                    <input type="button" id="sortBySname" value="Sort by Surname" class="buttonStyleMini"/>
+                    <input type="button" id="sortByAge" value="Sort by Age" class="buttonStyleMini"/>
+                    <input type="button" id="sortByLang" value="Sort by Languages amount" class="buttonStyleMini"/>
+                    <input type="text" id="numberInTheList" class="box" placeholder="Number of the Person"/>
+                    <input type="button" id="deletePersonByNumber"  value="Delete Person by number" class="buttonStyleMini"/>
+                    <input type="text" id="nameOfThePerson" class="box" placeholder="Name of the Person"/>
+                    <input type="button" id="deletePersonByName" value="Delete Person by name" class="buttonStyleMini"/>
+                </form>
+            </div>
+            <div id="showTable" class="hideElement">
+            </div>
         </div>
-    </form>
+    </div>
     <script type="text/javascript" src="Task_5_JS.js"></script>
-</body>
+   </body>
 </html>
