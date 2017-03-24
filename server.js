@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/Homework_3'));
 // set the home page route
 app.get('/', function(req, res) {
     // ejs render automatically looks in the views folder
-    res.render('Task_5');
+    res.render('index');
 });
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
