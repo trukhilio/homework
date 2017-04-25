@@ -1,0 +1,30 @@
+@import fontSizes
+.contentOne
+  text-align: center
+  margin-top: 5%
+
+  &__icon
+    margin: 2% auto
+
+  &__h2
+    text-transform: uppercase
+    font-family: OpenSansSemibold
+    font-size: $h2small
+
+  &__text
+    color: #949494
+    font-family: OpenSansRegular
+    font-size: $textSmall
+
+@media screen and (min-width: 530px)
+  .contentOne
+    &__h2
+      font-size: $h2middle
+
+    &__text
+      font-size: $textMiddle
+
+@media screen and (min-width: 800px)
+  .contentOne
+    &__h2
+      font-size: $h2grand

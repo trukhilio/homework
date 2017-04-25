@@ -1,0 +1,211 @@
+@import fontSizes
+.containerFour
+  &__text
+    text-align: center
+
+    &_h
+      font-family: OpenSansSemibold
+      font-size: $h3small
+      color: #000
+
+    &_p
+      font-family: OpenSansRegular
+      font-size: $textSmall
+      margin-top: 0
+
+  &__button
+    width: 100%
+    height: 50px
+    border: 1px solid #b6b6b6
+    border-left: 0
+    border-right: 0
+    background-color: #fff
+    color: #919191
+    cursor: pointer
+
+.contentFour
+  width: 100%
+  color: #a6a6a6
+
+  &__item
+    &_images
+      border-radius: 7px
+      max-width: 300px
+      box-shadow: 0 0 0 1px #e5e5e5 inset
+      position: relative
+      overflow: hidden
+      margin-top: 5%
+
+.project
+  &__details
+    font-family: OpenSansSemibold
+    font-size: $textSmall
+    flex-direction: row
+    align-items: center
+    width: 80%
+    justify-content: flex-end
+
+    p
+      margin: 8% 0
+
+    &_button
+      border-top: 10px solid transparent
+      border-bottom: 10px solid transparent
+      border-left: 16px solid #bfdb63
+      margin-left: 5%
+
+  &__text
+    margin: 0 5%
+
+  &__progress
+    flex-direction: row
+    height: 14px
+    margin: 0 5%
+
+    &_ten
+      flex-basis: 10%
+
+    &_fourty
+      flex-basis: 40%
+
+    &_sixty
+      flex-basis: 60%
+
+    &_ninety
+      flex-basis: 90%
+
+  &__progressText
+    font-family: OpenSansSemibold
+    font-size: $textSmall
+    text-align: center
+    border-bottom: 1px solid #d6d6d6
+    flex-direction: row
+    justify-content: space-between
+    width: 90%
+
+    &_percent
+      margin-left: 2%
+
+    &_days
+      margin-left: 2%
+
+  &__item
+    text-align: center
+
+    &_img
+      width: 100%
+      border-top-left-radius: 7px
+      border-top-right-radius: 7px
+
+    &_label
+      width: 100%
+      background-color: #add136
+      color: #fff
+      text-transform: uppercase
+      font-size: $textSmall
+      font-family: Montserrat
+
+    &_price
+      width: 100%
+      background-color: #26a6d1
+      color: #fff
+      font-size: $textSmall
+      font-family: OpenSansRegular
+
+    &_h
+      font-family: OpenSansBold
+      font-size: $h3small
+      color: #000
+
+    &_p
+      font-family: OpenSansRegular
+      font-size: $textSmall
+      margin-top: 0
+
+    &_barDone
+      background-color: #add136
+      border-radius: 7px 0 0 7px
+
+    &_barNone
+      background-color: #e3e3e3
+      border-radius: 0 7px 7px 0
+
+@media screen and (min-width: 340px)
+  .project
+    &__item
+      &_label
+        position: absolute
+        width: 0
+        height: 0
+        background-color: unset
+        border-top: 70px solid #add136
+        border-right: 70px solid transparent
+
+        p
+          position: absolute
+          top: -70px
+          left: 5px
+          transform: rotate(-45deg)
+
+      &_price
+        width: 140px
+        height: 35px
+        position: absolute
+        margin-top: 170px
+        margin-left: 140px
+        border-radius: 7px
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        background-color: #26a6d1
+        color: #fff
+        font-size: $textSmall
+
+    &__text
+      text-align: left
+
+  .contentFour
+    &__item
+      &_images
+        width: 300px
+
+@media screen and (min-width: 530px)
+  .containerFour
+    &__text
+      &_h
+        font-size: $h3middle
+
+      &_p
+        font-size: $textMiddle
+
+    &__button
+      width: 180px
+      border: 1px solid
+      border-radius: 7px
+      font-size: $textMiddle
+      margin: 0 auto
+
+@media screen and (min-width: 800px)
+  .contentFour
+    width: 80%
+    &__item
+      flex-direction: row
+      align-items: center
+
+      &_images
+        margin: 5% 0 0
+
+  .containerFour
+    &__text
+      text-align: left
+      margin-right: 5%
+
+    &__button
+      flex-shrink: 0
+      margin: 0 0
+
+  .project
+    flex-flow: row wrap
+    align-items: center
+    justify-content: space-between
+    margin: 0 0

@@ -1,0 +1,165 @@
+@import fontSizes
+.banner
+  width: 100%
+  background-color: #c8cfca
+  overflow: hidden
+
+  &__slides
+    flex-direction: row
+
+    &_item
+      position: relative
+      min-width: 100%
+      display: none
+      margin: 0 0
+      img
+        flex-basis: 100%
+        width: 100%
+        margin: 0 0
+
+
+    &_moveOne
+      display: flex
+      order: 1
+      animation: moveRight 1s
+      @keyframes moveRight
+        from
+          right: 0
+        to
+          right: 100%
+
+    &_moveTwo
+      display: flex
+      order: 3
+      animation: moveLeft 1s
+      @keyframes moveLeft
+        from
+          right: 100%
+        to
+          right: 0
+
+    &_on
+      display: flex
+
+    &_off
+      order: 2
+
+  &__text
+    width: 100%
+    text-align: center
+    color: #fff
+
+    &_mainText
+      font-family: OpenSansSemibold
+      font-size: $h1small
+      margin: 5% 5% 0
+
+    &_otherText
+      font-family: OpenSansRegular
+      font-size: $h2small
+      margin: 1% auto 2%
+
+  &__mainButton
+    width: 100%
+    height: 55px
+    background-color: #99c50a
+    border: 0
+    font-family: OpenSansSemibold
+    color: #fff
+    position: inherit
+    cursor: pointer
+
+  &__arrowButton
+    width: 90%
+    flex-direction: row
+    justify-content: space-between
+    position: absolute
+    margin: 20% auto
+    left: 0
+    right: 0
+
+    &_item
+      background: rgba(255, 255, 255, 0)
+      border: none
+
+.arrow
+  &__item
+    border: solid white
+    border-width: 0 5px 5px 0
+    display: inline-block
+    padding: 5px
+    border-radius: 2.5px
+    cursor: pointer
+
+    &_left
+      transform: rotate(135deg)
+
+    &_right
+      transform: rotate(-45deg)
+
+
+.arrow:active
+  outline: none
+  border: none
+
+.arrow:focus
+  outline: none
+
+@media screen and (min-width: 320px)
+  .banner
+    &__mainButton
+      font-size: 1em
+    &__text
+      position: absolute
+
+@media screen and (min-width: 530px)
+  .banner
+    &__mainButton
+      width: 254px
+      left: 0
+      right: 0
+      margin: 27% auto 0
+      position: absolute
+      border-radius: 7px
+      padding: 0
+
+    &__text
+      &_mainText
+        font-size: $h1middle
+      &_otherText
+        font-size: $h2middle
+
+@media screen and (min-width: 640px)
+  .banner
+    &__text
+      margin-top: 2%
+
+@media screen and (min-width: 800px)
+  .banner
+    &__mainButton
+      height: 74px
+      font-size: $textGrand
+
+    &__text
+      margin-top: 3%
+
+      &_mainText
+        font-size: $h1grand
+
+      &_otherText
+        font-size: $h2grand
+
+    &__arrowButton
+      width: 5%
+      left: 74%
+      margin-top: 38%
+
+@media screen and (min-width: 1020px)
+  .banner
+    &__text
+      &_mainText
+        font-size: 49px
+
+      &_otherText
+        font-size: 36px
+        margin-top: 4%

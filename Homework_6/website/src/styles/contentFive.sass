@@ -1,0 +1,137 @@
+@import fontSizes
+.contentFive
+  width: 100%
+
+  &__image
+    width: 100%
+
+  &__item
+    margin: 0 5%
+    font-family: OpenSansRegular
+    color: #949494
+    text-align: center
+
+    &_h2
+      font-family: OpenSansSemibold
+      font-size: $h2small
+      color: #9ec02d
+
+    &_p
+      margin-top: 0
+      font-size: $textSmall
+
+.comments
+  &__item
+    position: relative
+    width: 100%
+    max-width: 390px
+    height: auto
+    border-radius: 7px
+    background-color: #f0f0f0
+
+    &_h3
+      font-family: OpenSansSemibold
+      font-size: $h3small
+      color: #9ec02d
+
+    &_p
+      margin-top: 0
+      font-size: $textSmall
+
+  &__item:before
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+    left: 50%
+    top: 100%
+    border: 10px solid
+    border-color: #f0f0f0 transparent transparent #f0f0f0
+
+  &__person
+    margin-top: 12%
+    &_image
+      border-radius: 7px
+      flex-shrink: 0
+
+    &_name
+      font-family: Montserrat
+      color: #000
+
+@media screen and (min-width: 320px)
+  .comments
+    &__person
+      flex-direction: row
+      align-items: center
+      margin: 12% 0
+
+      &_container
+        margin: 0 10%
+
+    &__item:before
+      left: 20%
+
+
+@media screen and (min-width: 530px)
+  .contentFive
+    position: relative
+
+    &__item:first-of-type
+      position: absolute
+      top: 2%
+
+    &__item:nth-of-type(2)
+      margin-top: 5%
+
+    &__item
+      &_h2
+        font-size: $h2middle
+
+      &_p
+        font-size: $textMiddle
+
+  .comments
+    &__item
+      &_h3
+        font-size: $h3middle
+        margin-bottom: 0
+        margin-top: 3%
+
+      &_p
+        font-size: $textMiddle
+        margin: 2% 2%
+
+@media screen and (min-width: 800px)
+  .contentFive
+    flex-flow: row wrap
+    &__item:first-of-type
+      flex-basis: 100%
+      top: 18%
+
+    &__item
+      position: absolute
+      bottom: 2%
+
+      &_h2
+        font-size: $h2grand
+
+      &_p
+        margin: 0 10%
+
+    &__item:nth-of-type(2)
+      right: 54%
+      margin: 0 0
+
+    &__item:nth-of-type(3)
+      left: 54%
+      margin: 0 0
+
+  .comments
+    &__item
+      background-color: #fff
+
+    &__item:before
+      border-color: #fff transparent transparent #fff
+
+    &__person
+      margin-top: 9%
