@@ -1,17 +1,6 @@
 let initMap = () => {
     google.maps.event.addDomListener(window, 'load', initMap);
     let coord = {lat: 50.4499206, lng: 30.5249929};
-    let map = new google.maps.Map(document.querySelector('.map'), {
-        zoom: 17,
-        center: coord,
-        scrollwheel: false,
-        zoomControl: false,
-        mapTypeId: 'roadmap',
-        styles: styleMap,
-        streetViewControl: false,
-        mapTypeControl: false
-    });
-
     let styleMap = [
         {
             "featureType": "water",
@@ -197,6 +186,16 @@ let initMap = () => {
             ]
         }
     ];
+    let map = new google.maps.Map(document.querySelector('.map'), {
+        zoom: 17,
+        center: coord,
+        scrollwheel: false,
+        zoomControl: false,
+        mapTypeId: 'roadmap',
+        styles: styleMap,
+        streetViewControl: false,
+        mapTypeControl: false
+    });
 
     let marker = new google.maps.Marker({
         position: coord,
