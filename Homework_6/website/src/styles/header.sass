@@ -17,17 +17,26 @@ $uppercase-text: uppercase
     font-size: 23px
     color: #595959
 
+  &__wrapper
+    width: 100%
+
   &__nav
     @extend div
     font-family: OpenSansSemibold
     font-size: $font-size-header
     text-align: center
+    width: inherit
 
     &_item
-      margin-top: 5px
+      padding: 3% 0
+      border-bottom: 1px solid #949494
 
-      &:first-of-type
-        margin-top: 0
+    &_item:last-of-type
+      border-bottom: 0
+
+    &_item:hover
+      background-color: #bcda5c
+      color: #fff
 
   &__form
     @extend div
@@ -94,6 +103,7 @@ $uppercase-text: uppercase
       align-items: baseline
       justify-content: center
       margin-top: -10px
+      width: auto
 
     &__form
       margin: 0 10px
@@ -104,9 +114,16 @@ $uppercase-text: uppercase
       flex-flow: row
       justify-content: space-between
 
-      &_item:first-of-type
+      &_item
+        padding: 0
+        border: 0
         margin-top: 5px
         margin-left: 0
+
+      &_item:hover
+        background-color: transparent
+        color: #595959
+
 
 @media screen and (min-width: 800px)
   .header

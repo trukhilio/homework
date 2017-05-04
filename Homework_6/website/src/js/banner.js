@@ -1,7 +1,9 @@
 let slideIndex = 0;
+let selectorFinder = (selector)=> document.querySelectorAll(selector);
+let selectorOne = (selector)=> document.querySelector(selector);
 
 let slideShow = (n, selector)=>{
-    let slide = document.querySelectorAll('.banner__slides_item');
+    let slide = selectorFinder('.banner__slides_item');
     if (n > slide.length-1) {slideIndex = 0; n=slideIndex}
     if (n < 0) {slideIndex = slide.length-1; n=slideIndex}
     let x = 0;
@@ -22,7 +24,7 @@ let slideShow = (n, selector)=>{
         slide[n].classList.remove('banner__slides_off');
         slide[n].classList.remove(selector);
         slide[n].classList.add('banner__slides_on');
-    }, 1000);
+    }, 500);
 };
 
 let plusOne =(n, selector)=>{
@@ -30,17 +32,17 @@ let plusOne =(n, selector)=>{
     slideShow(slideIndex, selector);
 };
 
-let slideTime = setInterval(()=>{plusOne(1,'banner__slides_moveOne')}, 5000);
+let slideTime = setInterval(()=>plusOne(1,'banner__slides_moveOne'), 5000);
 
-let selectLeft = document.querySelector('.arrow__item_left');
-let selectRight = document.querySelector('.arrow__item_right');
+let selectLeft = selectorOne('.arrow__item_left');
+let selectRight = selectorOne('.arrow__item_right');
 
 let slideNext = (n, selector)=>{
     clearInterval(slideTime);
     plusOne(n, selector);
-    slideTime = setInterval(function(){plusOne(1,'banner__slides_moveOne')}, 5000);
+    slideTime = setInterval(()=>plusOne(1,'banner__slides_moveOne'), 5000);
 };
 
-selectLeft.addEventListener('click', ()=>{slideNext(-1, 'banner__slides_moveTwo')}, false);
-selectRight.addEventListener('click', ()=>{slideNext(1, 'banner__slides_moveOne')}, false);
+selectLeft.addEventListener('click', ()=>slideNext(-1, 'banner__slides_moveTwo'), false);
+selectRight.addEventListener('click', ()=>slideNext(1, 'banner__slides_moveOne'), false);
 

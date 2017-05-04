@@ -1,7 +1,7 @@
 @import fontSizes
 .banner
   width: 100%
-  background-color: #c8cfca
+  background-color: red
   overflow: hidden
 
   &__slides
@@ -21,7 +21,7 @@
     &_moveOne
       display: flex
       order: 1
-      animation: moveRight 1s
+      animation: moveRight 0.5s
       @keyframes moveRight
         from
           right: 0
@@ -31,7 +31,7 @@
     &_moveTwo
       display: flex
       order: 3
-      animation: moveLeft 1s
+      animation: moveLeft 0.5s
       @keyframes moveLeft
         from
           right: 100%
