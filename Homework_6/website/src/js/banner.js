@@ -17,35 +17,26 @@ const slideShow = (selector)=>{
 
     let itemAdd = arr.map((item)=>item.classList.add(selector));
 
-    arr[2].classList.add('banner__slides_one');
-    arr[2].classList.remove('banner__slides_two', 'banner__slides_three');
-
-    arr[0].classList.add('banner__slides_two');
-    arr[0].classList.remove('banner__slides_one', 'banner__slides_three');
-
-    arr[1].classList.add('banner__slides_three');
-    arr[1].classList.remove('banner__slides_one', 'banner__slides_two');
-
-    let inTimerFunc = (firstItem, lastItem)=>{
-        arr.move(firstItem, lastItem);
-        arr[0].classList.add('banner__slides_one');
-        arr[0].classList.remove('banner__slides_two', 'banner__slides_three');
-
-        arr[1].classList.add('banner__slides_two');
-        arr[1].classList.remove('banner__slides_one', 'banner__slides_three');
-
-        arr[2].classList.add('banner__slides_three');
-        arr[2].classList.remove('banner__slides_one', 'banner__slides_two');
-
+    const changerFunc = ()=>{
+        let i;
+        let len = arr.length;
+        let arrItem = (i)=> arr[i].style.order = i;
+        if (selector==='banner__slides_moveOne'){
+            arr.move(0, len-1);
+            for (i = 0; i<len; i++){
+                arrItem(i);
+            }
+        }
+        if (selector==='banner__slides_moveTwo'){
+            arr.move(len-1, 0);
+            for (i = len-1; i>=0; i--){
+                arrItem(i);
+            }
+        }
         let itemRemove = arr.map((item)=>item.classList.remove(selector));
     };
 
-    if (selector==='banner__slides_moveOne'){
-        setTimeout(()=>{inTimerFunc(0, arr.length-1)}, 1000);
-    }
-
-    if (selector==='banner__slides_moveTwo')
-        setTimeout(()=>{inTimerFunc(arr.length-1, 0)}, 1000);
+    setTimeout(()=>{changerFunc()}, 1000);
 };
 
 let slideTime = setInterval(()=>slideShow('banner__slides_moveOne'), 5000);
