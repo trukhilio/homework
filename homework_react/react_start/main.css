@@ -1,0 +1,42 @@
+body{
+    margin: 0 0;
+}
+
+.headerEl{
+    width: 100%;
+    text-align: center;
+}
+.headerEl__banner{
+    width: inherit;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    margin: 5% auto;
+    justify-content: center;
+    align-items: flex-start;
+}
+.content__image{
+    flex-shrink: 0;
+}
+
+.footerEL{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    height: 100px;
+}
+.footerEl__addr{
+    background-color: #ffffff;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.footerEl__addr_image{
+    width: 50px;
+}
+.footerEl__addr_item{
+    margin: 5px;
+}
