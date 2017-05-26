@@ -18,21 +18,18 @@ const slideShow = (selector)=>{
     let itemAdd = arr.map((item)=>item.classList.add(selector));
 
     const changerFunc = ()=>{
-        let i;
         let len = arr.length;
-        let arrItem = (i)=> arr[i].style.order = i;
+        let arrTem = () => arr.map((item ,key) => item.style.order = key);
         if (selector==='banner__slides_moveOne'){
             arr.move(0, len-1);
-            for (i = 0; i<len; i++){
-                arrItem(i);
-            }
+            arrTem();
         }
+
         if (selector==='banner__slides_moveTwo'){
             arr.move(len-1, 0);
-            for (i = len-1; i>=0; i--){
-                arrItem(i);
-            }
+            arrTem();
         }
+
         let itemRemove = arr.map((item)=>item.classList.remove(selector));
     };
 
